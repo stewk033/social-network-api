@@ -23,7 +23,7 @@ module.exports = {
     let user = await User.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true });
     user ? res.json(user) : res.json({ msg: 'no user with that id' });
   },
-  //? Add ability to delete associated thoughts
+  
   deleteUser: async (req, res) => {
     let user = await User.findById(req.params.id);
     let thoughtArray = user.thoughts;
